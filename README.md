@@ -6,6 +6,8 @@ You will have to get 'hardcore' with things. From `master`: `git reset --hard pa
 
 Then: `git push origin master --force`
 
+You can then do: `git branch -D parcel-spa` to remove that other `branch` IYW.
+
 **Do not make a habit of destroying and `forc`ing `git` `histor`ies.**
 
 ## Overview
