@@ -1,16 +1,15 @@
 {
-  "name": "js-starter",
+  "name": "spa-starter",
   "version": "1.0.0",
-  "description": "",
+  "description": "A starter repo for starting with Parcel and SPAs",
   "main": "index.js",
   "scripts": {
-    "serve": "browser-sync start --server --files '*.html, *.css, *.js'"
+    "serve": "parcel src/index.html"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["parcel"],
+  "author": "Manav Misra",
   "license": "ISC",
   "devDependencies": {
-    "browser-sync": "^2.26.7",
     "eslint": "^6.8.0",
     "eslint-config-standard": "^14.1.1",
     "eslint-plugin-import": "^2.20.2",
