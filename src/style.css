@@ -1,0 +1,13 @@
+/* TODO: Add some CSS Variables for colors.
+  (https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties)
+*/
+
+body {
+  /* TODO: Update font. */
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+}
+
+/* TODO: Set up type-scaling.
+  (https://type-scale.com/)
+*/

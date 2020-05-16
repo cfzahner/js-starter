@@ -1,4 +1,4 @@
-# Front End Starter
+# Spa Starter
 
 ## Overview
 
@@ -9,6 +9,25 @@ In addition to a '.gitignore' and some VS Code specific extensions and settings,
 1. [ESLint](eslint.org)
 2. [Stylelint](stylelint.io)
 3. [![JavaScript Style Guide](https://cdn.rawgit.com/standard/standard/master/badge.svg)](https://github.com/standard/standard)
+
+It uses [Parcel](https://parceljs.org/) for a simple build process and a `"serve"` script is included.
+
+## Directory Structure and TODOs
+
+### 'components' 📁
+
+'components' will hold...your _functional components_ in individual JS files that have capitalized filenames (e.g. 'Table.js'). The code inside would start like this:
+
+```js
+// Use 'props' to create and 'return' markup that will be conveniently wrapped in TEMPLATE LITERALS.
+export default (props) => ``
+```
+
+'./components/index.js' will manage `export`ing out the _components_ with `export { default as`
+
+---
+
+Other `TODO`s and 🎶 are sprinkled around in miscellaneous files to guide the overall process.
 
 ## Get Started
 
