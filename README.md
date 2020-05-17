@@ -1,5 +1,15 @@
 # Spa Starter
 
+If you are only interested in the `parcel-spa` `branch`, when trying to `merge` this into `master`, you will most likely not be able to do so because of 'unrelated histories.'
+
+You will have to get 'hardcore' with things. From `master`: `git reset --hard parcel-spa`.
+
+Then: `git push origin master --force`
+
+You can then do: `git branch -D parcel-spa` to remove that other `branch` IYW.
+
+**Do not make a habit of destroying and `forc`ing `git` `histor`ies.**
+
 ## Overview
 
 This template repository contains several opinionated, 'starter' files and settings to help students focus more time and energy on learning how to code and/or craft 'business logic' for projects and less time on configurations.
