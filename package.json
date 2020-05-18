@@ -2,7 +2,7 @@
   "name": "spa-starter",
   "version": "1.0.0",
   "description": "A starter repo for starting with Parcel and SPAs",
-  "main": "index.js",
+  "main": "index.html",
   "scripts": {
     "serve": "parcel src/index.html"
   },
