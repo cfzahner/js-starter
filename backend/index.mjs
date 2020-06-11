@@ -1,24 +1,51 @@
 import http from 'http'
 import { promises as fs } from 'fs'
+import formidable from 'formidable'
 
-async function handleReq ({ url }) {
+async function handleGet ({ url }) {
+  if (!url.slice(1)) {
+    url = '/index.html'
+  }
+
+  const HTMLFile = url.includes('.') ? url : `${url}.html`
+
   try {
-    switch (url) {
-      case '/':
-        return await fs.readFile('index.html', 'utf-8')
-      case '/about.html':
-        return await fs.readFile('about.html', 'utf-8')
-    }
+    // url.slice(1)takes out forward slash
+    return await fs.readFile(HTMLFile.slice(1), 'utf-8')
   } catch (e) {
     throw Error(e)
   }
 }
 
-http.createServer(async (req, res) => {
-  res.statusCode = 200
-  // set header says what type is coming back from response
+function handlePost (req) {
+  const form = new formidable.IncomingForm()
+  form.parse(req, (err, fields) => {
+    if (err) {
+      throw new Error(err)
+    }
+    console.log(fields)
+  })
 
+  return '<p>Done with post!</p>'
+}
+
+async function handleReq (req) {
+  switch (req.method) {
+    case 'GET':
+      return handleGet(req)
+    case 'POST':
+      return handlePost(req)
+  }
+}
+
+http.createServer(async (req, res) => {
   res.setHeader('Content-Type', 'text/html; charset=utf-8')
 
-  res.end(await handleReq(req))
+  try {
+    res.statusCode = 200
+    res.end(await handleReq(req))
+  } catch (e) {
+    res.statusCode = 404
+    res.end('<p>Page not found</p>')
+  }
 }).listen(5000)
